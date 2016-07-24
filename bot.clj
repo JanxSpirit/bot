@@ -10,5 +10,6 @@
                          [{:cmd  "MOVE"
                            :metadata  {:direction (rand-nth  [0 1 2 3 4 5 6 7])}}]
                          [{:cmd  "MOVE"
-                           :metadata  {:direction (rand-nth  [0 1 2 3 4 5 6 7])}}]]]
+                           :metadata  {:direction (rand-nth  [0 1 2 3 4 5 6 7])}}]
+                         {:cmd "SMOKESCREEN"}]]
     {:commands (rand-nth command-options)}))
