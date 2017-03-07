@@ -1,2 +1,2 @@
-# bot
-Battlebot Bot
+# Janx the Wombat
+A Wombat
