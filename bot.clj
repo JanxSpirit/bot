@@ -7,7 +7,7 @@
                                      :east (get (get dungeon 3) 4)
                                      :south (get (get dungeon 4) 3)})
 
-  (defn my-orientation [arena] (get-in (find #(= :wombat (get-in % [:contents :type])) (flatten arena)) [:contents :orientation]))
+  (defn my-orientation [arena] :n #_(get-in (find #(= :wombat (get-in % [:contents :type])) (flatten arena)) [:contents :orientation]))
 
   (defn food-in-front-of-me [immed-sqs] immed-sqs)
 
