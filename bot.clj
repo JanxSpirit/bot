@@ -2,7 +2,7 @@
   (def turn-directions [:right :left :about-face])
   (def smoke-directions [:forward :backward :left :right :drop])
 
-  (defn up-square [dungeon] (get (get map 2) 3))
+  (defn up-square [dungeon] (get (get dungeon 2) 3))
 
   (let [command-options [(repeat 10 {:action :move
                                      :metadata {}})
