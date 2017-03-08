@@ -9,7 +9,7 @@
 
   (defn my-orientation [arena] (get-in (find #(= :wombat (get-in % [:contents :type])) (flatten arena)) [:contents :orientation]))
 
-  (defn food-in-front-of-me [immed-sqs ])
+  (defn food-in-front-of-me [immed-sqs] immed-sqs)
 
   (let [command-options [(repeat 10 {:action :move
                                      :metadata {}})
