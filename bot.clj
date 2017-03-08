@@ -13,6 +13,6 @@
                          (repeat 1 {:action :smoke
                                     :metadata {:direction (rand-nth smoke-directions)}})]]
 
-    (let [arena (dissoc state :saved-state :up-square)]
+    (let [cleanstate (dissoc state :saved-state :up-square)]
       {:command (rand-nth (flatten command-options))
-       :state (assoc arena :up-square (up-square arena))})))
+       :state (assoc cleanstate :up-square (up-square (cleanstate :arena)))})))
