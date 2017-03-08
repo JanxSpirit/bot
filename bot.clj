@@ -15,4 +15,4 @@
 
     (let [arena (dissoc state :saved-state :up-square)]
       {:command (rand-nth (flatten command-options))
-       :state (assoc state :up-square (up-square arena))})))
+       :state (assoc arena :up-square (up-square arena))})))
