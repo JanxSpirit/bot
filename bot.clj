@@ -1,11 +1,15 @@
-(defn run
-  [{:keys  [arena saved-state bot-id energy spawn-bot? initiative-order wombat-count] :as frame-details}]
-  (println bot-id ": my initiative order is " initiative-order " of " wombat-count " wombats")
-  (let [command-options [[{:cmd  "SHOOT"
-                           :metadata  {:direction (rand-nth  [0 1 2 3 4 5 6 7]) :energy 20}}
-                          {:cmd  "SET_STATE"
-                           :metadata  {:foo  "bar"}}]
-                         [{:cmd  "MOVE"
-                           :metadata  {:direction (rand-nth  [0 1 2 3 4 5 6 7])}}]
-                         [{:cmd "SMOKESCREEN"}]]]
-    {:commands (rand-nth command-options)}))
+(fn [state time-left]
+  (def turn-directions [:right :left :about-face])
+  (def smoke-directions [:forward :backward :left :right :drop])
+
+  (let [command-options [(repeat 10 {:action :move
+                                     :metadata {}})
+                         (repeat 2 {:action :turn
+                                    :metadata {:direction (rand-nth turn-directions)}})
+                         (repeat 4 {:action :shoot
+                                      :metadata {}})
+                         (repeat 1 {:action :smoke
+                                    :metadata {:direction (rand-nth smoke-directions)}})]]
+
+    {:command (rand-nth (flatten command-options))
+     :state {}}))
