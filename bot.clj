@@ -2,7 +2,10 @@
   (def turn-directions [:right :left :about-face])
   (def smoke-directions [:forward :backward :left :right :drop])
 
-  (defn up-square [dungeon] (get (get dungeon 2) 3))
+  (defn immediate-squares [dungeon] {:up (get (get dungeon 2) 3)
+                                     :left (get (get dungeon 3) 2)
+                                     :right (get (get dungeon 3) 4)
+                                     :down (get (get dungeon 4) 3)})
 
   (let [command-options [(repeat 10 {:action :move
                                      :metadata {}})
@@ -15,4 +18,4 @@
 
     (let [cleanstate (dissoc state :saved-state :up-square)]
       {:command (rand-nth (flatten command-options))
-       :state (assoc cleanstate :up-square (up-square (cleanstate :arena)))})))
+       :state (assoc cleanstate :immediate-squares (immediate-squares (cleanstate :arena)))})))
