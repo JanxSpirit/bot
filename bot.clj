@@ -20,7 +20,7 @@
                          (repeat 1 {:action :smoke
                                     :metadata {:direction (rand-nth smoke-directions)}})]
         immed-sqs (immediate-squares (state :arena))]
-    (if )
+
 
     (let [cleanstate (dissoc state :saved-state :up-square :my-orientation)]
       {:command (rand-nth (flatten command-options))
