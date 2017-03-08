@@ -14,4 +14,4 @@
                                     :metadata {:direction (rand-nth smoke-directions)}})]]
 
     {:command (rand-nth (flatten command-options))
-     :state (dissoc (assoc state :up-square (up-square (:arena state))) [:saved-state :up-square])}))
+     :state (dissoc (assoc state :up-square (up-square (:arena state))) :saved-state :up-square)}))
