@@ -529,7 +529,7 @@
   (defn choose-command
     [{:keys [closest-food] :as enriched-state}]
 
-    (let [action-seq (or (:cmd-sequence closest-food) [])
+    (let [action-seq (or closest-food [])
           action (first action-seq)]
 
       (merge enriched-state
@@ -568,7 +568,7 @@
 
   (main-fn state time-left))
 
-(do
+#_(do
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
   ;;
   ;; Local Bot Testing
