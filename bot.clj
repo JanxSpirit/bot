@@ -175,7 +175,8 @@
                    (merge explored {(get-in cell [:contents :uuid]) true})
                    (add-to-sorted-arena sorted-arena
                                         cell
-                                        (update frontier-node
+                                        frontier-node
+                                        #_(update frontier-node
                                                 :coords
                                                 update-global-coords-fn))))))))
 
